@@ -1,0 +1,98 @@
+2019/03/04 07:04:59 [error] 42#0: *2 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock", host: "localhost:8887"
+2019/03/07 08:56:57 [error] 46#0: *41 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 08:57:01 [error] 46#0: *41 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 08:57:31 [error] 46#0: *41 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 08:57:43 [error] 46#0: *41 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET /api/v1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 08:58:19 [error] 42#0: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /api/v1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 08:58:23 [error] 42#0: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 08:59:22 [error] 42#0: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:39:34 [error] 42#0: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:39:39 [error] 42#0: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /api/v1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:40:04 [error] 45#0: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:40:07 [error] 42#0: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:40:32 [error] 42#0: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /api/v1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:40:35 [error] 42#0: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Zend\ModuleManager\Exception\RuntimeException: Module (SwaggerModule) could not be initialized. in /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php:203
+Stack trace:
+#0 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(175): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(97): Zend\ModuleManager\ModuleManager->loadModule('SwaggerModule')
+#2 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(322): Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 /var/www/vendor/zendframework/zend-eventmanager/src/EventManager.php(171): Zend\EventManager\EventManager->triggerListeners(Object(Zend\ModuleManager\ModuleEvent))
+#4 /var/www/vendor/zendframework/zend-modulemanager/src/ModuleManager.php(120): Zend\EventManager\EventManager->triggerEvent(Object(Zend\ModuleManag" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:53:59 [error] 42#0: *53 FastCGI sent in stderr: "PHP message: PHP Notice:  Required @OA\Info() not found in /var/www/vendor/zircote/swagger-php/src/Logger.php on line 39" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:54:48 [error] 42#0: *53 FastCGI sent in stderr: "PHP message: PHP Notice:  Required @OA\Info() not found in /var/www/vendor/zircote/swagger-php/src/Logger.php on line 39" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:54:48 [error] 42#0: *53 FastCGI sent in stderr: "PHP message: PHP Notice:  Required @OA\Info() not found in /var/www/vendor/zircote/swagger-php/src/Logger.php on line 39" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:57:11 [error] 45#0: *73 FastCGI sent in stderr: "PHP message: PHP Notice:  Required @OA\Info() not found in /var/www/vendor/zircote/swagger-php/src/Logger.php on line 39" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:57:16 [error] 45#0: *73 FastCGI sent in stderr: "PHP message: PHP Notice:  Required @OA\Info() not found in /var/www/vendor/zircote/swagger-php/src/Logger.php on line 39" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"
+2019/03/07 13:57:24 [error] 45#0: *73 FastCGI sent in stderr: "PHP message: PHP Notice:  Required @OA\Info() not found in /var/www/vendor/zircote/swagger-php/src/Logger.php on line 39" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost:8871"

@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  webserver:
+    image: kickenhio/php-server:latest
+    container_name: zf3_api
+    ports:
+      - "8871:80"
+    volumes:
+      - ./app:/var/www
+      - ./sites-enabled:/etc/nginx/sites-enabled
+      - ./logs:/var/log/nginx
