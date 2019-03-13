@@ -1,24 +1,36 @@
 <?php
 namespace Application\Controller;
 
-use RestApi\Controller\ApiController;
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 use OpenApi;
 
 /**
  * Doc Controller
  */
-class DocController extends ApiController
+class DocController extends AbstractActionController
 {
 
     /**
-     * bar method
+     * Show Swagger docs
      *
      */
     public function indexAction()
     {
-        $openapi = \OpenApi\scan('/var/www/module');
-		//header('Content-Type: application/x-yaml');
-		echo $openapi->toYaml();
-		die;
+		$view = new \Zend\View\Model\ViewModel();
+		$view->setTerminal(true);
+
+		return $view;
+	}
+	
+	/**
+     * bar method
+     *
+     */
+    public function getAction()
+    {
+		$this->response->getHeaders()->addHeaderLine('Content-Type: text/plain');
+		$openapi = \OpenApi\scan('/var/www/module');
+		return $this->response->setContent($openapi->toJson());
 	}
 }

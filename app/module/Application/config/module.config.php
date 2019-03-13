@@ -24,6 +24,19 @@ return [
                         'isAuthorizationRequired' => false // set true if this api Required JWT Authorization.
                     ],
                 ],
+				'may_terminate' => true,
+				'child_routes' => [
+					'application' => [
+						'type' => Segment::class,
+						'options' => [
+							'route' => '/json',
+							'defaults' => [
+								'controller' => Controller\DocController::class,
+								'action' => 'get',
+							],
+						],
+					],
+				],
             ],
 			'api' => [
                 'type' => Segment::class,
@@ -64,6 +77,9 @@ return [
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ],
+		'strategies' => [
+			'ViewJsonStrategy',
+		],
         'template_path_stack' => [
             __DIR__ . '/../view',
         ],
