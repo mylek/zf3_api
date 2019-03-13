@@ -15,48 +15,44 @@ class PageController extends ApiController
 	
 	/**
      * @OA\Get(
-     *      path="/api/v1",
-     *      operationId="Index",
-     *      tags={"Index"},
+     *      path="/api/v1/getPage",
+     *      operationId="Get page content",
+     *      tags={"Page"},
      *      security={
      *          {"basicAuth": {}}
      *      },
      *      @OA\Parameter(
-     *          name="nip",
+     *          name="type",
      *          in="path",
-     *          description="NIP number",
-     *          required=false,
+     *          description="Paget type",
+     *          required=true,
      *          @OA\Schema(type="string")
      *      ),
      *      @OA\Response(
      *          response="200",
-     *          description="NIP status.",
+     *          description="Page content",
      *          @OA\JsonContent()
      *      ),
      *      @OA\Response(
      *          response="400",
      *          description="Error: Bad request. When required parameters were not supplied.",
-     *      ),
-     *      @OA\Response(
-     *          response="401",
-     *          description="Unauthorized.",
      *      )
      * )
      *
-     * Sprawdza poprawność numeru NIP.
+     * Get page content by type
      *
      * @param string $nip
      * @return void
      */
-    public function indexAction()
+    public function getPageAction()
     {
+		print_r($_GET);die;
         // your action logic
 
         // Set the HTTP status code. By default, it is set to 200
         $this->httpStatusCode = 200;
 
-        // Set the response
-        $this->apiResponse['you_response'] = 'Pages';
+        $this->apiResponse['you_response'] = $_GET;
 
         return $this->createResponse();
     }

@@ -48,10 +48,10 @@ return [
 					'application' => [
 						'type' => Segment::class,
 						'options' => [
-							'route' => '/v1',
+							'route' => '/v1/getPage',
 							'defaults' => [
 								'controller' => Controller\PageController::class,
-								'action' => 'index',
+								'action' => 'getPage',
 							],
 						],
 					],
