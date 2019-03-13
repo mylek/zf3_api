@@ -23,7 +23,7 @@ class PageController extends ApiController
      *      },
      *      @OA\Parameter(
      *          name="type",
-     *          in="path",
+     *          in="query",
      *          description="Paget type",
      *          required=true,
      *          @OA\Schema(type="string")
@@ -46,13 +46,12 @@ class PageController extends ApiController
      */
     public function getPageAction()
     {
-		print_r($_GET);die;
         // your action logic
 
         // Set the HTTP status code. By default, it is set to 200
         $this->httpStatusCode = 200;
 
-        $this->apiResponse['you_response'] = $_GET;
+        $this->apiResponse['you_response'] = $this->params()->fromRoute('type', 1);;
 
         return $this->createResponse();
     }
