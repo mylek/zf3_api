@@ -9,6 +9,7 @@ namespace Application\Controller;
 
 use RestApi\Controller\ApiController;
 use Zend\View\Model\JsonModel;
+use Application\Lib\Page\Factory;
 
 class PageController extends ApiController
 {
@@ -45,13 +46,13 @@ class PageController extends ApiController
      * @return void
      */
     public function getPageAction()
-    {
-        // your action logic
-
-        // Set the HTTP status code. By default, it is set to 200
+	{
+		$factory = new Factory();
+		$page = $factory->create($this->params()->fromQuery('type', ''));
+		
         $this->httpStatusCode = 200;
 
-        $this->apiResponse['you_response'] = $this->params()->fromRoute('type', 1);;
+        $this->apiResponse['you_response'] = $page->parsedPage();
 
         return $this->createResponse();
     }
