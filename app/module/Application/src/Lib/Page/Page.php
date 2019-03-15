@@ -3,6 +3,7 @@
 namespace Application\Lib\Page;
 
 use Zend\Http\Client;
+use Zend\Dom\Query;
 
 abstract class Page
 {
@@ -18,17 +19,16 @@ abstract class Page
     {
         if (null === static::$instance) {
             static::$instance = new static();
-			static::$instance->connect();
         }
         return static::$instance;
     }
 	
-	protected function connect()
+	protected function connect($url)
 	{
 		try
 		{
 			$client = new Client();
-			$client->setUri($this->url);
+			$client->setUri($this->url.$url);
 			$client->setOptions($this->connectParams);
 			$this->client = $client;
 		}
@@ -39,9 +39,36 @@ abstract class Page
 		
 	}
 	
+	protected function getPageContent()
+	{
+		$response = $this->client->send();
+		return $response->getBody();
+	}
+	
+	protected function getPage(string $url) : \Zend\Dom\Query
+	{
+		$this->connect($url);
+		return $this->parsedPage();
+	}
+	
+	protected function getBetsDoc(\Zend\Dom\Query $dom, string $root, string $node) : \DOMNodeList
+	{
+		$xpath = new \DOMXPath($dom->execute($root)->getDocument());
+		return $xpath->query($node);
+	}
+	
+	protected function parsedPage() : Query
+	{
+		$pageContent = $this->getPageContent();
+		if(empty($pageContent))
+		{
+			throw new \Exception('Content page is empty');
+		}
+		
+		return new Query($pageContent);
+	}
+	
     protected function __construct() {}
     protected function __clone() {}
     protected function __wakeup() {}
-	
-	abstract public function parsedPage();
 }

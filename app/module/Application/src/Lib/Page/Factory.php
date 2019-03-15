@@ -9,8 +9,10 @@ class Factory implements FactoryInterface
 		$type = strtolower($type);
 		switch($type)
 		{
-			case 'test':
-				return Test::getInstance();
+			case 'efortuna':
+				return Efortuna::getInstance();			
+			case 'sts':
+				return Sts::getInstance();
 			default:
 				throw new \Exception('Type is not define');
 		}

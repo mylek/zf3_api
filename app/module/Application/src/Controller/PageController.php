@@ -52,7 +52,7 @@ class PageController extends ApiController
 		
         $this->httpStatusCode = 200;
 
-        $this->apiResponse['you_response'] = $page->parsedPage();
+        $this->apiResponse['you_response'] = $page->getMatches();
 
         return $this->createResponse();
     }
