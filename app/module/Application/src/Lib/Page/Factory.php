@@ -10,7 +10,7 @@ class Factory implements FactoryInterface
 		switch($type)
 		{
 			case 'test':
-				return new Test();
+				return Test::getInstance();
 			default:
 				throw new \Exception('Type is not define');
 		}
