@@ -51,10 +51,9 @@ abstract class Page
 		return $this->parsedPage();
 	}
 	
-	protected function getBetsDoc(\Zend\Dom\Query $dom, string $root, string $node) : \DOMNodeList
+	protected function getBetsDoc(\Zend\Dom\Query $dom, string $root) : \Zend\Dom\NodeList
 	{
-		$xpath = new \DOMXPath($dom->execute($root)->getDocument());
-		return $xpath->query($node);
+		return $dom->queryXpath($root);
 	}
 	
 	protected function parsedPage() : Query

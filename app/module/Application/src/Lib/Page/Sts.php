@@ -13,8 +13,7 @@ class Sts extends Page
 	{
 		$betsData = new BetCollection();
 		$dom = $this->getPage('oferta/zaklady-bukmacherskie/zaklady-sportowe/?action=offer&sport=184&region=6521&league=4080');
-		$bets = $this->getBetsDoc($dom, ".bet_tab", "//table//tbody//tr");
-		
+		$bets = $this->getBetsDoc($dom, "//div[@class='bet_tab']//table//tbody//tr");
 		foreach($bets as $row)
 		{
 			$bet = $this->parsedRow($row);
@@ -26,24 +25,24 @@ class Sts extends Page
 	
 	private function parsedRow(\DOMElement $row) : Bet
 	{
-		var_dump($row);
-		$dom = new \DomDocument();
-		$dom->load($row);
-		$xpath = new \DOMXPath($dom);
-		$td = $xpath->query("//table[@class='subTable']//td");
-		
-		//$id = (int)$row->getAttribute('data-gtm-enhanced-ecommerce-id');
-		//$td = $row->getElementsByTagName('td');
-		var_dump($td);die;
+		$table = $row->getElementsByTagName('table');
+		$td = $row->getElementsByTagName('td');
+		$url = $td->item(0)->getElementsByTagName('a')->item(0)->getAttribute('href');
+		$params = parse_url($url);
+		$urls = [];
+		parse_str($params['query'], $urls);
+		$td2 = $td->item(1)->getElementsByTagName('td');
+		$team1 = trim(substr($td2->item(0)->textContent, 0, strlen($var)-6));
+		$team2 = trim(substr($td2->item(2)->textContent, 0, strlen($var)-6));
 		$bet = new Bet();
-		$bet->setId($id);
-		$bet->setName((string)$this->getRowData($td, 0));
-		$bet->setWin((float)$this->getRowData($td, 1));
-		$bet->setDraw((float)$this->getRowData($td, 2));
-		$bet->setLoss((float)$this->getRowData($td, 3));
-		$bet->setWinDraw((float)$this->getRowData($td, 4));
-		$bet->setDrawLoss((float)$this->getRowData($td, 5));
-		$bet->setWinLoss((float)$this->getRowData($td, 6));
+		$bet->setId((int)$urls['oppty']);
+		$bet->setName($team1 . " " . $team2);
+		$bet->setWin((float)$td2->item(0)->getElementsByTagName('span')->item(0)->nodeValue);
+		$bet->setDraw((float)str_replace("\nX\n", '', $td->item(1)->nodeValue));
+		$bet->setLoss((float)$td2->item(2)->getElementsByTagName('span')->item(0)->nodeValue);
+		$bet->setWinDraw((float) 0);
+		$bet->setDrawLoss((float) 0);
+		$bet->setWinLoss((float) 0);
 		
 		return $bet;
 	}
