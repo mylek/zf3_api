@@ -25,6 +25,7 @@ class Sts extends Page
 	
 	private function parsedRow(\DOMElement $row) : Bet
 	{
+		$bet = new Bet();
 		$table = $row->getElementsByTagName('table');
 		$td = $row->getElementsByTagName('td');
 		$url = $td->item(0)->getElementsByTagName('a')->item(0)->getAttribute('href');
@@ -32,13 +33,22 @@ class Sts extends Page
 		$urls = [];
 		parse_str($params['query'], $urls);
 		$td2 = $td->item(1)->getElementsByTagName('td');
+		var_dump($td2->item(0)->textContent);
 		$team1 = trim(substr($td2->item(0)->textContent, 0, strlen($var)-6));
 		$team2 = trim(substr($td2->item(2)->textContent, 0, strlen($var)-6));
-		$bet = new Bet();
+
+		if($td2->item(1) == NULL)
+		{
+			return $bet;
+		}
+		
+		$win = $td2->item(0)->getElementsByTagName('span')->item(0)->textContent;
+		
 		$bet->setId((int)$urls['oppty']);
 		$bet->setName($team1 . " " . $team2);
-		$bet->setWin((float)$td2->item(0)->getElementsByTagName('span')->item(0)->nodeValue);
-		$bet->setDraw((float)str_replace("\nX\n", '', $td->item(1)->nodeValue));
+		
+		$bet->setWin((float)$win);
+		$bet->setDraw((float)str_replace("\nX\n", '', $td2->item(1)->nodeValue));
 		$bet->setLoss((float)$td2->item(2)->getElementsByTagName('span')->item(0)->nodeValue);
 		$bet->setWinDraw((float) 0);
 		$bet->setDrawLoss((float) 0);
