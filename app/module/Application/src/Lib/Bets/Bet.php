@@ -57,4 +57,12 @@ class Bet
 		$this->winLoss = $winLoss;
 	}
 	
+	public function nameNormalize() : string
+	{
+		$name = trim($this->name);
+		$name = str_replace(' - ', ' ', $name);
+		$name = preg_replace( '/[^a-z ]+/i', '', $name);
+		return strtolower(str_replace(['. ', ' ', '-', "\n", '.'], ['', '_', '', '', ''], $name));
+	}
+	
 }

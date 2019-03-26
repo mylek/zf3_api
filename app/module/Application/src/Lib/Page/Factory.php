@@ -10,9 +10,9 @@ class Factory implements FactoryInterface
 		switch($type)
 		{
 			case 'efortuna':
-				return Efortuna::getInstance();			
+				return new Efortuna();			
 			case 'sts':
-				return Sts::getInstance();
+				return new Sts();
 			default:
 				throw new \Exception('Type is not define');
 		}

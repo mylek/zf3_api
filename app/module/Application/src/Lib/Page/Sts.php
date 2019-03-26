@@ -17,10 +17,9 @@ class Sts extends Page
 		foreach($bets as $row)
 		{
 			$bet = $this->parsedRow($row);
-			$betsData->offsetSet($bet->getId(), $bet);
+			$betsData->offsetSet($bet->nameNormalize(), $bet);
 		}
-		var_dump($betsData);
-		die;
+		return $betsData;
 	}
 	
 	private function parsedRow(\DOMElement $row) : Bet
@@ -33,7 +32,6 @@ class Sts extends Page
 		$urls = [];
 		parse_str($params['query'], $urls);
 		$td2 = $td->item(1)->getElementsByTagName('td');
-		var_dump($td2->item(0)->textContent);
 		$team1 = trim(substr($td2->item(0)->textContent, 0, strlen($var)-6));
 		$team2 = trim(substr($td2->item(2)->textContent, 0, strlen($var)-6));
 

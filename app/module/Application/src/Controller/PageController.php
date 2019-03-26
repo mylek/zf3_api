@@ -10,6 +10,7 @@ namespace Application\Controller;
 use RestApi\Controller\ApiController;
 use Zend\View\Model\JsonModel;
 use Application\Lib\Page\Factory;
+use Application\Lib\Bets\PagesCompare;
 
 class PageController extends ApiController
 {
@@ -27,7 +28,11 @@ class PageController extends ApiController
      *          in="query",
      *          description="Paget type",
      *          required=true,
-     *          @OA\Schema(type="string")
+     *          @OA\Schema(
+					type="string",
+					enum={"Sts", "Efortuna"},
+					default="Sts"
+				)
      *      ),
      *      @OA\Response(
      *          response="200",
@@ -56,4 +61,62 @@ class PageController extends ApiController
 
         return $this->createResponse();
     }
+	
+	/**
+     * @OA\Post(
+     *     path="/api/v1/comparePages",
+     *     description="Compare list match",
+     *     operationId="compareMatch",
+     *     tags={"Compare"},
+     *     security={{"basicAuth": {}}},
+			@OA\RequestBody(
+     *          description="Order status",
+     *          required=true,
+     *          @OA\MediaType(
+     *              mediaType="multipart/form-data",
+     *              @OA\Schema(
+     *                  type="object",
+     *                  required={"pages"},
+     *                  @OA\Property(
+     *                      property="pages",
+     *                      description="pages",
+     *                      type="string",
+							default="['sts', 'efortuna']"
+     *                  )
+     *              )
+     *          )
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Resalt compare match",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="400",
+     *         description="Error: Bad request. When required parameters were not supplied.",
+     *     )
+     * )
+     *
+     * Compare match.
+     *
+     * @param Request $request
+     * 
+     * @return JsonResponse
+     */
+	public function comparePagesAction()
+	{
+		$pages = json_decode($this->getRequest()->getPost('pages'));
+		if(empty($pages))
+		{
+			$this->httpStatusCode = 400;
+			$this->apiResponse['you_response'] = "Not set pages list";
+			return $this->createResponse();
+		}
+		
+		$pagesCompare = new PagesCompare($pages);
+		var_dump($pagesCompare);die;
+		$this->httpStatusCode = 200;
+		$this->apiResponse['you_response'] = json_decode($this->getRequest()->getPost('matchs'));
+		return $this->createResponse();
+	}
 }

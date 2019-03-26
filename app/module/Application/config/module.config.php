@@ -55,6 +55,16 @@ return [
 							],
 						],
 					],
+					'match' => [
+						'type' => Segment::class,
+						'options' => [
+							'route' => '/v1/comparePages',
+							'defaults' => [
+								'controller' => Controller\PageController::class,
+								'action' => 'comparePages',
+							],
+						],
+					],
 				],
             ],
         ],

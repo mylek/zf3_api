@@ -13,15 +13,15 @@ abstract class Page
 		'timeout'      => 30
 	];
 	protected $url;
-    protected static $instance;
+    //protected static $instance;
 	
-    public static function getInstance()
+    /*public static function getInstance()
     {
         if (null === static::$instance) {
             static::$instance = new static();
         }
         return static::$instance;
-    }
+    }*/
 	
 	protected function connect($url)
 	{
@@ -66,8 +66,4 @@ abstract class Page
 		
 		return new Query($pageContent);
 	}
-	
-    protected function __construct() {}
-    protected function __clone() {}
-    protected function __wakeup() {}
 }

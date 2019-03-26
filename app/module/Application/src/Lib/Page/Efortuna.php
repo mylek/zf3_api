@@ -21,10 +21,9 @@ class Efortuna extends Page
 		foreach($bets as $row)
 		{
 			$bet = $this->parsedRow($row);
-			$betsData->offsetSet($bet->getId(), $bet);
+			$betsData->offsetSet($bet->nameNormalize(), $bet);
 		}
-		var_dump($betsData);
-		die;
+		return $betsData;
 	}
 	
 	private function parsedRow(\DOMElement $row) : Bet
