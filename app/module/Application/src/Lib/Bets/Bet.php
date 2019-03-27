@@ -16,7 +16,13 @@ class Bet
 	public function getId()
 	{
 		return $this->id;
-	}	
+	}
+	
+	public function __get($name)
+	{
+		return $this->{$name};
+	}
+	
 	public function setId(int $id)
 	{
 		$this->id = $id;
@@ -63,6 +69,11 @@ class Bet
 		$name = str_replace(' - ', ' ', $name);
 		$name = preg_replace( '/[^a-z ]+/i', '', $name);
 		return strtolower(str_replace(['. ', ' ', '-', "\n", '.'], ['', '_', '', '', ''], $name));
+	}
+	
+	public function sum()
+	{
+		return $this->win + $this->draw + $this->loss;
 	}
 	
 }

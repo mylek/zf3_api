@@ -10,7 +10,7 @@ namespace Application\Controller;
 use RestApi\Controller\ApiController;
 use Zend\View\Model\JsonModel;
 use Application\Lib\Page\Factory;
-use Application\Lib\Bets\PagesCompare;
+use Application\Lib\Page\PagesCompare;
 
 class PageController extends ApiController
 {
@@ -114,7 +114,7 @@ class PageController extends ApiController
 		}
 		
 		$pagesCompare = new PagesCompare($pages);
-		var_dump($pagesCompare);die;
+		$pagesCompare->run();
 		$this->httpStatusCode = 200;
 		$this->apiResponse['you_response'] = json_decode($this->getRequest()->getPost('matchs'));
 		return $this->createResponse();
